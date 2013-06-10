@@ -1,0 +1,17 @@
+<h1>Asking the questions</h1>
+
+<table>
+  <tr>
+    <th>photo</th>    
+    <th>Text</th>
+  </tr>
+
+  <tr>
+    <% photo = @random_photo.first %>
+    <td><%= image_tag photo.avatar_url(:thumb) if photo && photo.avatar? %></td>  
+    <td><%= @random_question.first.text %></td>
+  </tr>
+</table>
+
+<br />
+

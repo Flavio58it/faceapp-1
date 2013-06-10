@@ -1,0 +1,33 @@
+<h1>What do you think?</h1>
+
+<%= form_for @answer do |f| %>
+    <% photo = @random_photo.first %>
+
+    <%= image_tag photo.avatar_url(:thumb) if photo && photo.avatar? %>
+    <%= f.hidden_field :photo_id, :value => @random_photo.first.id.to_s %>
+
+    <%= @random_question.first.text %>
+    <%= f.hidden_field :question_id, :value => @random_question.first.id %>   
+    <br/>
+    
+<%
+=begin %>
+    <% -10.upto(10).each do |n| %> 
+        <%= f.radio_button :rating, n.to_s %><%= n %>
+    <% end %>
+<%
+=end %>
+
+<div class="content" style="padding-left: 20px;">
+    <%= f.label " " %>
+    <%= f.text_field :rating, :value => 5, :class => 'slideControl', :maxlength => 3 %>
+</div>
+
+<br/><%= f.submit %>
+
+<% end %>
+
+<br/>
+<%= link_to 'View Answers List', answers_path %>
+
+<%= render 'layouts/slider' %>

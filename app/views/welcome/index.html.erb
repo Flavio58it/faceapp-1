@@ -1,0 +1,23 @@
+<h1>WELCOME TO THE FACE APP
+    <br/>
+    <%= link_to "Answer some questions", :controller=> 'answers', :action=>'new'   %>
+
+<h3>Photos by Person</h3>
+  <% people = Person.find(:all) %>
+  <% people.each do |p| %>
+    <p>
+      <%= link_to p.name, people_path  + "/" + p.id.to_s %>  (<%= Photo.where(:person_id=>p.id).count  %> photos) 
+    </p>  
+  <% end %>
+
+<h3>Question Averages</h3>
+  <% Answer.find(:all).sample(1).each do |answer| %>
+    <%= render :partial => 'layouts/answer', :locals => { :answer => answer } %>
+  <% end %>
+
+<h3>Individual Answers</h3>
+  <% Answer.find(:all).each do |answer| %>
+    <%= render :partial => 'layouts/answer', :locals => { :answer => answer } %>
+  <% end %>
+
+

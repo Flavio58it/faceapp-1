@@ -1,0 +1,6 @@
+<div class="answers" style="background-color: #dedede; border: 1px thin solid; padding: 5px; margin: 10px;" >
+  <span><%= image_tag(Photo.find(answer.photo_id).avatar_url(:thumb)) %> </span>
+  <span style="font-size: 36px;  padding-top: 15px;"><%= answer.rating %></span><br/>
+  <span><%= Question.find(answer.question_id).text %></span>
+  <br/><br/>
+</div>

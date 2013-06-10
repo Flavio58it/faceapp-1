@@ -1,0 +1,18 @@
+<h1>Add a new photo</h1>
+
+
+<%= form_for @photo do |f| %>
+
+    <%= f.label :person_id %>
+    <%= collection_select(:photo, :person_id, Person.all, :id, :name )  
+    #f.select_tag :person_id, options_from_collection_for_select(Person.all, "id", "name") 
+    %>
+    
+    <br/>
+    <%= f.label :avatar %>
+    <%= f.file_field :avatar %>
+
+    <br/>
+    <%= f.submit %>
+
+<% end %>

@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @person.name %>
+</p>
+
+<p>
+<strong>Photos uploaded by <%= @person.name %></strong>
+<br/>
+
+<% @person.photos.each do |photo| %>
+    <%= link_to(image_tag(photo.avatar_url(:thumb)),"/photos/#{photo.id}") if photo && photo.avatar? %>
+<% end %>
+
+</p>
+
+
+
+<%= link_to 'Edit', edit_person_path(@person) %> |
+<%= link_to 'Back', people_path %>
