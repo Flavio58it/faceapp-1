@@ -1,6 +1,7 @@
 == FACEAPP
 
 {<img src="https://codeclimate.com/github/kimlercorey/faceapp.png" />}[https://codeclimate.com/github/kimlercorey/faceapp]
+{<img src="https://coveralls.io/repos/kimlercorey/faceapp/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/kimlercorey/faceapp]
 
 
 
