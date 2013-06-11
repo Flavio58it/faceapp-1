@@ -23,6 +23,7 @@ end
 gem 'jquery-rails'
 gem 'has_scope'
 
+gem "twitter-bootstrap-rails"
 
 #use for photo uploads
 gem 'carrierwave'
