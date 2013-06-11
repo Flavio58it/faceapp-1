@@ -1,12 +1,13 @@
 <h1>What do you think?</h1>
 
+<div class="bs-docs-example">
 <%= form_for @answer do |f| %>
     <% photo = @random_photo.first %>
 
-    <%= image_tag photo.avatar_url(:thumb) if photo && photo.avatar? %>
+    <%= image_tag photo.avatar_url, :size => "200x200" if photo && photo.avatar? %>
     <%= f.hidden_field :photo_id, :value => @random_photo.first.id.to_s %>
 
-    <%= @random_question.first.text %>
+    <h3 class="small"><%= @random_question.first.text %></h2>
     <%= f.hidden_field :question_id, :value => @random_question.first.id %>   
     <br/>
     
@@ -23,9 +24,11 @@
     <%= f.text_field :rating, :value => 5, :class => 'slideControl', :maxlength => 3 %>
 </div>
 
-<br/><%= f.submit %>
+<br/><%= f.submit :class => 'btn btn-primary btn-large' %>
 
 <% end %>
+</div>
+
 
 <br/>
 <%= link_to 'View Answers List', answers_path %>
