@@ -10,7 +10,7 @@
           <a class="brand" href="./">FaceValue</a>
           <div class="nav-collapse collapse">
             <ul class="nav">
-              <li class="active">
+              <li class="">
                 <a href="/">NewFace</a>
               </li>
               <li class="">
@@ -33,6 +33,10 @@
         </div>
       </div>
   </div>
-
+  <script>
+    $(document).ready(function () {
+        $('ul.nav > li > a[href="'+window.location.pathname+'"]').parent().addClass('active'); 
+    });
+  </script>
   <div style="padding-top: 50px;"> </div>
 
