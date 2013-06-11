@@ -29,27 +29,21 @@ class PeopleController < ApplicationController
     end
   end
 
-  # GET /people/1/edit
   def edit
     @person = Person.find(params[:id])
   end
 
-  # POST /people
-  # POST /people.json
   def create
     @person = Person.new(params[:person])
 
-    respond_to do |format|
       if @person.save
-        format.html { redirect_to @person, notice: 'Person was successfully created.' }
+        redirect_to @person, notice: 'Person was successfully created.' 
       else
-        format.html { render action: "new" }
+        render action: "new" 
       end
-    end
+
   end
 
-  # PUT /people/1
-  # PUT /people/1.json
   def update
     @person = Person.find(params[:id])
 
@@ -62,14 +56,10 @@ class PeopleController < ApplicationController
     end
   end
 
-  # DELETE /people/1
-  # DELETE /people/1.json
   def destroy
     @person = Person.find(params[:id])
     @person.destroy
+    redirect_to people_url 
 
-    respond_to do |format|
-      format.html { redirect_to people_url }
-    end
   end
 end
