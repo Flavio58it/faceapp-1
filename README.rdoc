@@ -1,6 +1,8 @@
-[![Code Climate](https://codeclimate.com/github/kimlercorey/faceapp.png)](https://codeclimate.com/github/kimlercorey/faceapp)
-
 == FACEAPP
+
+{<img src="https://codeclimate.com/github/kimlercorey/faceapp.png" />}[https://codeclimate.com/github/kimlercorey/faceapp]
+
+
 
 Faceapp is a ruby 1.9.3p392 / Rails 3.2.13 website which allows users to respond to faces.
 
