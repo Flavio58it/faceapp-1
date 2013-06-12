@@ -1,22 +1,11 @@
 class PeopleController < ApplicationController
-  # GET /people
-  # GET /people.json
+
   def index
     @people = Person.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-    end
   end
 
-  # GET /people/1
-  # GET /people/1.json
   def show
     @person = Person.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-    end
   end
 
   # GET /people/new
@@ -35,31 +24,23 @@ class PeopleController < ApplicationController
 
   def create
     @person = Person.new(params[:person])
-
-      if @person.save
-        redirect_to @person, notice: 'Person was successfully created.' 
-      else
-        render action: "new" 
-      end
-
+    @person.save ? redirect_to(@person, notice: 'Person was successfully created.') : render(action: "new") 
   end
 
   def update
     @person = Person.find(params[:id])
 
-    respond_to do |format|
-      if @person.update_attributes(params[:person])
-        format.html { redirect_to @person, notice: 'Person was successfully updated.' }
-      else
-        format.html { render action: "edit" }
-      end
-    end
+    if @person.update_attributes(params[:person]) 
+      redirect_to @person, notice: 'Person was successfully updated.'
+    else  
+      render action: "edit"
+    end  
   end
 
   def destroy
     @person = Person.find(params[:id])
     @person.destroy
     redirect_to people_url 
-
   end
+
 end
