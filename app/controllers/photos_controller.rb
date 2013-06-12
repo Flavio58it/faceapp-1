@@ -23,10 +23,10 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.new(params[:photo])
 
-      if @photo.save
-        redirect_to @photo, notice: 'Photo was successfully created.' 
-      else
+      unless @photo.save
         render action: "new" 
+      else
+        redirect_to @photo, notice: 'Created!' 
       end
   end
 
@@ -34,7 +34,7 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
 
       if @photo.update_attributes(params[:photo])
-        redirect_to @photo, notice: 'Successfully upodated' 
+        redirect_to @photo, notice: 'Successfully upodated' }
       else
         render action: "edit" 
       end
