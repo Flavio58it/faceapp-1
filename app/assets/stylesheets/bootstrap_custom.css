@@ -1,23 +1,24 @@
-@viewport {
-        width: device-width;
-    }
+@viewport { 
+  width: device-width;
+}
 
 /* Base class */
 .bs-docs-example {
   position: relative;
   margin: 15px 0;
-  padding: 39px 19px 14px;
-  *padding-top: 19px;
+  padding: 5% 5% 5%;
+  *padding-top: 10%;
   background-color: #fff;
   border: 1px solid #ddd;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
           border-radius: 4px;
+  background: none repeat scroll 0 0 #EEEEEE;
 }
 
 .body {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 /* Echo out a label for the example 
 .bs-docs-example:after {
